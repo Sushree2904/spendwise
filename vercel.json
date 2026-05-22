@@ -1,15 +1,23 @@
 {
-  "outputDirectory": "frontend",
+  "version": 2,
   "builds": [
     {
-      "src": "frontend/index.html",
+      "src": "app.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
+      "src": "/(signup|signin|api/.*)",
+      "dest": "app.py"
+    },
+    {
       "src": "/(.*)",
-      "dest": "frontend/index.html"
+      "dest": "index.html"
     }
   ]
 }
