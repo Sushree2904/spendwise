@@ -11,7 +11,8 @@ import datetime
 import os
 from functools import wraps
 from flask import Flask, request, jsonify, send_from_directory
-
+from dotenv import load_dotenv
+load_dotenv()
 try:
     import jwt as pyjwt
     JWT_AVAILABLE = True
